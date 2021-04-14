@@ -12,6 +12,7 @@ export default class Room extends Component {
         };
         this.roomCode = this.props.match.params.roomCode;
         this.getRoomDetails();
+        this.leaveButtonPressed = this.leaveButtonPressed.bind(this);
     }
 
     getRoomDetails() {
@@ -23,6 +24,10 @@ export default class Room extends Component {
                 isHost: data.is_host,
             });
         });
+    }
+
+    leaveButtonPressed() {
+        
     }
 
     render() {
