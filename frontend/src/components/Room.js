@@ -8,10 +8,12 @@ export default class Room extends Component {
             votesToSkip: 2,
             guestCanPause: false,
             isHost: false,
+            showSettings: false,
         };
         this.roomCode = this.props.match.params.roomCode;
         this.getRoomDetails();
         this.leaveButtonPressed = this.leaveButtonPressed.bind(this);
+        this.updateShowSettings = this.updateShowSettings.bind(this);
     }
 
     getRoomDetails() {
@@ -41,6 +43,22 @@ export default class Room extends Component {
             this.props.leaveRoomCallback();
             this.props.history.push("/");
         });
+    }
+
+    updateShowSettings(value) {
+        this.setState({
+            showSettings: value,
+        });
+    }
+
+    renderSettingsButton() {
+        return (
+            <Grid item xs={12} align="center">
+                <Button variant="contained" color="primary" onClick={() => this.updateShowSettings(true)}>
+                    Settings
+                </Button>
+            </Grid>
+        );
     }
 
     render() {
