@@ -83,8 +83,9 @@ export default class CreateRoomPage extends Component {
                 <Button color="primary" variant="contained" onClick={this.handleRoomButtonPressed}>Create A Room</Button>
             </Grid>
             <Grid item xs={12} align="center">
-                <Button color="secondary" variant="contained" to="/" component={Link}>Create A Room</Button>
-                Back
+                <Button color="secondary" variant="contained" to="/" component={Link}>
+                    Back
+                </Button> 
             </Grid>
         </Grid>
         );
